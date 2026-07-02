@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShieldCheck | Password Security Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Animated Cyber Background -->
+    <div class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="grid"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-shield-halved"></i>
+                <h1>SHIELD<span>CHECK</span></h1>
+            </div>
+            <p class="subtitle">Advanced Cyber-Intelligence Password Analysis</p>
+        </header>
+
+        <main class="dashboard-grid">
+            <!-- Main Analyzer Card -->
+            <section class="card analyzer-card">
+                <div class="lock-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h2>Security Analyzer</h2>
+                <div class="input-group">
+                    <input type="password" id="passwordInput" placeholder="Enter password to analyze...">
+                    <button id="togglePassword" class="input-tool"><i class="fas fa-eye"></i></button>
+                    <button id="voiceBtn" class="input-tool"><i class="fas fa-microphone"></i></button>
+                </div>
+
+                <div class="strength-meter-wrapper">
+                    <div class="strength-label">
+                        <span>Security Level: <b id="strengthText">None</b></span>
+                        <span id="strengthPercent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="strengthFill" class="fill"></div>
+                    </div>
+                </div>
+
+                <div class="checklist">
+                    <div class="check-item" data-rule="length"><i class="fas fa-circle"></i> 12+ Characters</div>
+                    <div class="check-item" data-rule="upper"><i class="fas fa-circle"></i> Uppercase</div>
+                    <div class="check-item" data-rule="lower"><i class="fas fa-circle"></i> Lowercase</div>
+                    <div class="check-item" data-rule="number"><i class="fas fa-circle"></i> Numbers</div>
+                    <div class="check-item" data-rule="special"><i class="fas fa-circle"></i> Symbols</div>
+                </div>
+            </section>
+
+            <!-- Chart Dashboard -->
+            <section class="charts-container">
+                <div class="card chart-card">
+                    <h3>Character Composition</h3>
+                    <canvas id="compositionChart"></canvas>
+                </div>
+                <div class="card chart-card">
+                    <h3>Security Vectors</h3>
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Insights Panel -->
+            <section class="card insights-card">
+                <h3><i class="fas fa-bolt"></i> Security Insights</h3>
+                <div class="insight-grid">
+                    <div class="insight-item">
+                        <small>Crack Time (Brute Force)</small>
+                        <p id="crackTime">Instantly</p>
+                    </div>
+                    <div class="insight-item">
+                        <small>Entropy Score</small>
+                        <p id="entropyScore">0 bits</p>
+                    </div>
+                    <div class="insight-item">
+                        <small>Dictionary Status</small>
+                        <p id="dictStatus">Safe</p>
+                    </div>
+                </div>
+                <div class="suggestions" id="suggestions">
+                    <p class="msg">Start typing to see security recommendations...</p>
+                </div>
+            </section>
+
+            <!-- Tools Section -->
+            <section class="card tools-card">
+                <h3><i class="fas fa-toolbox"></i> Secure Generator</h3>
+                <div class="generator-ui">
+                    <div class="gen-output">
+                        <span id="genResult">P@ssw0rdGen2024</span>
+                        <button id="copyGen"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <button id="generateBtn" class="primary-btn">Generate Secure Key</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 CyberShield Analytics. Powered by AI Intelligence.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
